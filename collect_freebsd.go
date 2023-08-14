@@ -22,6 +22,24 @@ func (e *PfExporter) Collect(ch chan<- prometheus.Metric) {
 		return
 	}
 
+	rules, err := e.fw.Anchor.Rules()
+	if err != nil {
+		log.Errorf("failed to get rules: %v", err)
+		return
+	}
+
+	for _, rule := range rules {
+		var ruleStats pf.RuleStats
+		rule.Stats(&ruleStats)
+
+		if ruleStats.MaxStates <= 0 {
+			continue
+		}
+
+		ch <- prometheus.MustNewConstMetric(e.metrics["rule_states_current"], prometheus.CounterValue, float64(ruleStats.StatesCurrent), "rule_label", rule.Label())
+		ch <- prometheus.MustNewConstMetric(e.metrics["rule_states_total"], prometheus.CounterValue, float64(ruleStats.StatesTotal), "rule_label", rule.Label())
+	}
+
 	ch <- prometheus.MustNewConstMetric(e.metrics["state_total"], prometheus.GaugeValue, float64(stats.CounterStates()))
 	ch <- prometheus.MustNewConstMetric(e.metrics["state_searches"], prometheus.CounterValue, float64(stats.CounterStateSearch()))
 	ch <- prometheus.MustNewConstMetric(e.metrics["state_inserts"], prometheus.CounterValue, float64(stats.CounterStateInsert()))

@@ -4,6 +4,7 @@ import (
 	"flag"
 	"net/http"
 
+	"github.com/gizahNL/gojail"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/log"
@@ -25,6 +26,15 @@ func NewPfExporter() (*PfExporter, error) {
 	}
 
 	for k, v := range map[string]*prometheus.Desc{
+		"rule_states_current": prometheus.NewDesc(
+			prometheus.BuildFQName(Namespace, "rule", "states_current"),
+			"Current rule states.",
+			nil,
+			nil),
+		"rule_states_total": prometheus.NewDesc(prometheus.BuildFQName(Namespace, "rule", "states_total"),
+			"Total rule states.",
+			nil,
+			nil),
 		"state_total": prometheus.NewDesc(
 			prometheus.BuildFQName(Namespace, "state", "total"),
 			"Number of pf states.",
@@ -116,6 +126,7 @@ func NewPfExporter() (*PfExporter, error) {
 var (
 	listenAddress = flag.String("web.listen-address", ":9107", "Address to listen on for web interface and telemetry.")
 	metricsPath   = flag.String("web.telemetry-path", "/metrics", "Path under which to expose metrics.")
+	jail          = flag.String("jail", "", "Name of jail to attach to")
 )
 
 func main() {
@@ -124,6 +135,17 @@ func main() {
 	exporter, err := NewPfExporter()
 	if err != nil {
 		log.Fatalf("Failed to create pf exporter: %v", err)
+	}
+
+	if len(*jail) > 0 {
+		j, err := gojail.JailGetByName(*jail)
+		if err != nil {
+			log.Fatalf("Failed to find jail: %v", err)
+		}
+		err = j.Attach()
+		if err != nil {
+			log.Fatalf("Failed to attach to jail: %v", err)
+		}
 	}
 
 	prometheus.MustRegister(exporter)
