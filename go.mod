@@ -12,4 +12,4 @@ require (
 	golang.org/x/sys v0.11.0 // indirect
 )
 
-replace github.com/go-freebsd/pf => github.com/mhalden/gopf v0.0.0-20230814205849-21422b0f0f68
+replace github.com/go-freebsd/pf => github.com/mhalden/gopf v0.0.0-20230814210054-4458ffe5cdbf
