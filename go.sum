@@ -162,6 +162,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.1 h1:4hp9jkHxhMHkqkrB3Ix0j
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
 github.com/mhalden/gopf v0.0.0-20230814203935-e33457de4c44 h1:9G+SslbBJt6KdmHbgx/07D3eK55IOgA/hBfFc9nSOSU=
 github.com/mhalden/gopf v0.0.0-20230814203935-e33457de4c44/go.mod h1:tdROY43E48UmdK5zVi13Wd6kJYUeaoCuRDcCqFh2Dhc=
+github.com/mhalden/gopf v0.0.0-20230814205328-4e8715516147 h1:7JtR/pLvr+4H0xXdwrevTu+avsN8A+QFDVtNb+3U8zM=
+github.com/mhalden/gopf v0.0.0-20230814205328-4e8715516147/go.mod h1:tdROY43E48UmdK5zVi13Wd6kJYUeaoCuRDcCqFh2Dhc=
 github.com/miekg/dns v1.0.14/go.mod h1:W1PPwlIAgtquWBMBEV9nkV9Cazfe8ScdGz/Lj7v3Nrg=
 github.com/mischief/gopf v0.0.0-20180501204525-1cb08c1e9a32 h1:J/+lW5owzTzRcAL9o8UHWabPBl1eLgvHkYGZfnkkmp0=
 github.com/mischief/gopf v0.0.0-20180501204525-1cb08c1e9a32/go.mod h1:Qg7nPzKoW2+ZzSp5ZEPS926e754o5tXtlpevhAnH9P0=
