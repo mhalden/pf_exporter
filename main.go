@@ -35,6 +35,10 @@ func NewPfExporter() (*PfExporter, error) {
 			"Total rule states.",
 			[]string{"rule"},
 			nil),
+		"rule_states_max": prometheus.NewDesc(prometheus.BuildFQName(Namespace, "rule", "states_max"),
+			"Max number of states for rule.",
+			[]string{"rule"},
+			nil),
 		"state_total": prometheus.NewDesc(
 			prometheus.BuildFQName(Namespace, "state", "total"),
 			"Number of pf states.",
