@@ -29,11 +29,11 @@ func NewPfExporter() (*PfExporter, error) {
 		"rule_states_current": prometheus.NewDesc(
 			prometheus.BuildFQName(Namespace, "rule", "states_current"),
 			"Current rule states.",
-			nil,
+			[]string{"rule"},
 			nil),
 		"rule_states_total": prometheus.NewDesc(prometheus.BuildFQName(Namespace, "rule", "states_total"),
 			"Total rule states.",
-			nil,
+			[]string{"rule"},
 			nil),
 		"state_total": prometheus.NewDesc(
 			prometheus.BuildFQName(Namespace, "state", "total"),
