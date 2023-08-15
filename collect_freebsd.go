@@ -36,8 +36,8 @@ func (e *PfExporter) Collect(ch chan<- prometheus.Metric) {
 			continue
 		}
 
-		ch <- prometheus.MustNewConstMetric(e.metrics["rule_states_current"], prometheus.CounterValue, float64(ruleStats.StatesCurrent), "rule_label", rule.Label(), "rule", rule.String())
-		ch <- prometheus.MustNewConstMetric(e.metrics["rule_states_total"], prometheus.CounterValue, float64(ruleStats.StatesTotal), "rule_label", rule.Label(), "rule", rule.String())
+		ch <- prometheus.MustNewConstMetric(e.metrics["rule_states_current"], prometheus.CounterValue, float64(ruleStats.StatesCurrent)) //, "rule_label", rule.Label(), "rule", rule.String())
+		ch <- prometheus.MustNewConstMetric(e.metrics["rule_states_total"], prometheus.CounterValue, float64(ruleStats.StatesTotal))     //, "rule_label", rule.Label(), "rule", rule.String())
 	}
 
 	ch <- prometheus.MustNewConstMetric(e.metrics["state_total"], prometheus.GaugeValue, float64(stats.CounterStates()))
