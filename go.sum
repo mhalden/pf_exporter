@@ -160,8 +160,8 @@ github.com/mattn/go-isatty v0.0.4/go.mod h1:M+lRXTBqGeGNdLjl/ufCoiOlB5xdOkqRJdNx
 github.com/mattn/go-runewidth v0.0.2/go.mod h1:LwmH8dsx7+W8Uxz3IHJYH5QSwggIsqBzpuz5H//U1FU=
 github.com/matttproud/golang_protobuf_extensions v1.0.1 h1:4hp9jkHxhMHkqkrB3Ix0jegS5sx/RkqARlsWZ6pIwiU=
 github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5Ld7szi9bcBfOoFv/3dc6xSMkL2PC0=
-github.com/mhalden/gopf v0.0.0-20230815125526-e67b1b58263d h1:bT3YyTRKCWza+nhk52TV5gKacK39wv8S87m8FFBXatk=
-github.com/mhalden/gopf v0.0.0-20230815125526-e67b1b58263d/go.mod h1:tdROY43E48UmdK5zVi13Wd6kJYUeaoCuRDcCqFh2Dhc=
+github.com/mhalden/gopf v0.0.0-20230815130346-35c63ee4204a h1:IgM1jJR2HQ34CGTuY6pUlRvwbTwbwIjgWIvBZSRa4Sw=
+github.com/mhalden/gopf v0.0.0-20230815130346-35c63ee4204a/go.mod h1:tdROY43E48UmdK5zVi13Wd6kJYUeaoCuRDcCqFh2Dhc=
 github.com/miekg/dns v1.0.14/go.mod h1:W1PPwlIAgtquWBMBEV9nkV9Cazfe8ScdGz/Lj7v3Nrg=
 github.com/mischief/gopf v0.0.0-20180501204525-1cb08c1e9a32 h1:J/+lW5owzTzRcAL9o8UHWabPBl1eLgvHkYGZfnkkmp0=
 github.com/mischief/gopf v0.0.0-20180501204525-1cb08c1e9a32/go.mod h1:Qg7nPzKoW2+ZzSp5ZEPS926e754o5tXtlpevhAnH9P0=
